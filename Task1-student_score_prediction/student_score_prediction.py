@@ -59,3 +59,11 @@ print(f"Correlation between Hours Studied and Exam Score: {data['Hours_Studied']
 
 print(f"Model Coefficient: {model.coef_[0]}") #--> 0.28834271
 print(f"Model Intercept: {model.intercept_}") #--> 61.48999442610166
+
+#----------thoughts on the model performance----------
+# The model's R-squared value is relatively low (0.205), indicating that the- 
+# model does not explain a large portion of the variance in exam scores based on hours studied alone. 
+# This suggests that there are other factors influencing exam scores that are not captured by this simple linear regression model. 
+# The correlation between hours studied and exam score is moderate (0.445), which indicates a positive relationship, 
+# but it is not strong enough to make highly accurate predictions. Further feature engineering or the inclusion of additional-
+# relevant variables may improve the model's performance.

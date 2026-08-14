@@ -10,19 +10,19 @@ from sklearn.preprocessing import StandardScaler, scale
 data = pd.read_csv("Task2-customer_segmentation/Mall_Customers.csv")
 
 #inspecting the data
-# print(data.head())
-# print(data.describe())
-# print(data.info())
-#print(data.isnull().sum())
-#print(data.duplicated().sum())
+print(data.head())
+print(data.describe())
+print(data.info())
+print(data.isnull().sum())
+print(data.duplicated().sum())
 # data has no null values or duplicates, so no cleaning is necessary
 
 # visually inspecting the relationship between annual income and spending score
-# plt.scatter(data['Annual Income (k$)'], data['Spending Score (1-100)'])
-# plt.xlabel('Annual Income (k$)')
-# plt.ylabel('Spending Score (1-100)')
-# plt.title('Customer Segmentation')
-# plt.show()
+plt.scatter(data['Annual Income (k$)'], data['Spending Score (1-100)'])
+plt.xlabel('Annual Income (k$)')
+plt.ylabel('Spending Score (1-100)')
+plt.title('Customer Segmentation')
+plt.show()
 
 # defining features for clustering
 X = data[['Annual Income (k$)', 'Spending Score (1-100)']]
@@ -39,11 +39,11 @@ for k in range(1, 11):
     inertia.append(kmeans.inertia_)
 
 # plotting the elbow curve
-# plt.plot(range(1, 11), inertia, marker='o')
-# plt.xlabel('Number of clusters (k)')
-# plt.ylabel('Inertia')
-# plt.title('Elbow Method for Optimal k')
-# plt.show()
+plt.plot(range(1, 11), inertia, marker='o')
+plt.xlabel('Number of clusters (k)')
+plt.ylabel('Inertia')
+plt.title('Elbow Method for Optimal k')
+plt.show()
 
 # based on the elbow method, we can choose k=5 for clustering
 best_k = 5
